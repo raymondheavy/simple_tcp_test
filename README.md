@@ -7,10 +7,13 @@ TCP传输测试工具
 dd if=/dev/zero of=test bs=1M count=200
 ```
 
+### 编译
+gcc -std=c99 -o client client.c
+
 ### 使用
 ```
 ./client 192.168.30.3 10000 test
 ```
 
-###　开启BBR拥塞控制算法
+### 开启BBR拥塞控制算法
 sysctl -w net.ipv4.tcp_congestion_control=bbr
